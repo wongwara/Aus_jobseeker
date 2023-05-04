@@ -165,15 +165,7 @@ def show_predict_page():
         'Teaser': [teaser],
         'DesktopAdTemplate': [desktopAdTemplate]
         })
-
-        with open('saved_steps.pkl', 'rb') as file:
-        data = pickle.load(file)
-        regressor_loaded = data["model"]
-        jobClassification = data["jobClassification"]
-        
-        X['JobClassification'] = X['JobClassification'].astype(float)
-        X['JobClassification'] = Jobclassification.transform(X['JobClassification'])
-
+        X[:, 0] = JobClassificatio.transform(X[:,0])
         X['Teaser'] = preprocess_text_input(X['Teaser'])
         X['DesktopAdTemplate'] = preprocess_text_input(X['DesktopAdTemplate'])
 
