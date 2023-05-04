@@ -106,8 +106,12 @@ def show_predict_page():
     st.sidebar.subheader('Input features')
     
     st.sidebar.text_input('teaser', '')
-    st.write('if none type (-)')
-    
+    teaser_input = st.text_input(
+        "Enter some text 👇,if none type (-)",
+        label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled,
+        placeholder=st.session_state.placeholder,
+    )
     st.sidebar.text_input('desktopAdTemplate', '')
     st.write('if none type (-)')
     
