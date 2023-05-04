@@ -2,6 +2,11 @@
 from sklearn.preprocessing import OrdinalEncoder
 import streamlit as st
 import pandas as pd
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 def show_predict_page():
     st.title("Software Developer Salary Prediction")
@@ -121,12 +126,6 @@ def show_predict_page():
         "Enter desktopAdTemplate from your search , if None please type (-)",'')
     
     st.sidebar.text_input('desktopAdTemplate', '')
-    
-    import nltk
-    from nltk.corpus import stopwords
-    from nltk.tokenize import word_tokenize
-    from nltk.stem import PorterStemmer
-    from sklearn.feature_extraction.text import TfidfVectorizer
 
     def preprocess_text_input(input_str):
         # Clean the text data
