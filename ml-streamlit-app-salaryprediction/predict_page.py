@@ -103,9 +103,8 @@ def show_predict_page():
     
     # Input widgets
     st.sidebar.subheader('Input features')
-    teaser = st.sidebar.slider('teaser', {teaser})
-    desktopAdTemplate = st.sidebar.slider('desktopAdTemplate', {desktopAdTemplate})
- 
+    teaser = st.sidebar.text_input('teaser', '')
+    desktopAdTemplate = st.sidebar.text_input('desktopAdTemplate', '')
     ok = st.button("Calculate Salary")
     if ok:
         X = np.array([[Jobclassification, isRightToWorkRequired, State,
