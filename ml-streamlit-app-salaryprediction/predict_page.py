@@ -115,9 +115,9 @@ def show_predict_page():
     st.write("'Yes':1, 'No':0")
     
     # Input widgets
-    teaser_input = st.text_input(
+    teaser = st.text_input(
         "Enter teaser from your search , if None please type (-)",'')
-    desktopAdTemplate_input = st.text_input(
+    desktopAdTemplate = st.text_input(
         "Enter desktopAdTemplate from your search , if None please type (-)",'')
     
     st.sidebar.text_input('desktopAdTemplate', '')
@@ -126,10 +126,11 @@ def show_predict_page():
     if ok:
         X = np.array([[Jobclassification, isRightToWorkRequired, State,
         Python,SQL,R,Tableau,SAS,Matlab,Hadoop,Spark,Java,Scala,recruiter,
-        teaser,desktopAdTemplate
-        ]])
+        teaser,desktopAdTemplate]])
         X[:, 0] = Jobclassification.transform(X[:,0])
         X[:, 1] = le_education.transform(X[:,1])
+        X['teaser'] = le_education.transform(X[:])
+        X['desktopAdTemplate'] = le_education.transform(X[:])
         
         X = X.astype(float)
 
