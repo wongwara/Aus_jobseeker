@@ -62,6 +62,10 @@ def show_predict_page():
         "0",
         "1",
     )
+    Java = (
+        "0",
+        "1",
+    )
     Scala = (
         "0",
         "1",
