@@ -90,6 +90,31 @@ y_pred = svm_model.predict(X_test)
 # calculate the accuracy of the SVM model predictions on the test data
 accuracy = accuracy_score(y_test, y_pred)
 
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+def preprocess_text_input(input_str):
+    # Clean the text data
+    input_str = input_str.replace('[^\w\s]', '') # Remove punctuation
+    input_str = input_str.replace('\d+', '') # Remove digits
+    # Normalize the text data
+    stop_words = set(stopwords.words('english'))
+    input_str = ' '.join([word.lower() for word in input_str.split() if word.lower() not in stop_words])
+    # Tokenize the text data
+    input_str = word_tokenize(input_str)
+    # Apply stemming
+    stemmer = PorterStemmer()
+    input_str = [stemmer.stem(word) for word in input_str]
+
+    # Create TF-IDF vectors
+    vectorizer = TfidfVectorizer()
+    input_tfidf = vectorizer.fit_transform([' '.join(input_str)])
+
+    return input_tfidf.toarray()
+
 import pickle
 data = {"model": svm_model, "jobClassification": jobClassification, "Label": Label}
 with open('saved_steps.pkl', 'wb') as file:
