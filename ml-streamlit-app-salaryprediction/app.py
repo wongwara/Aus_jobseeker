@@ -10,5 +10,6 @@ st.set_page_config(
 
 # Title of the app
 st.title('🌷 Salary Prediction App')
+show_predict_page()
 
     
