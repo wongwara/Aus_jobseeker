@@ -124,8 +124,6 @@ def show_predict_page():
         "Enter teaser from your search , if None please type (-)",'')
     desktopAdTemplate = st.text_input(
         "Enter desktopAdTemplate from your search , if None please type (-)",'')
-    
-    st.sidebar.text_input('desktopAdTemplate', '')
 
     def preprocess_text_input(input_str):
         # Clean the text data
