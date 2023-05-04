@@ -90,8 +90,7 @@ def show_predict_page():
     isRightToWorkRequired = st.selectbox("isRightToWorkRequired", isRightToWorkRequired)
     st.write("f': 0, 't': 1")
     State = st.selectbox("State", State)
-    st.write("'Australian Capital Territory':0, 'South Australia':1,
-       'Western Australia':2")
+    st.write("'Australian Capital Territory':0, 'South Australia':1,'Western Australia':2")
     Python = st.selectbox("Python", Python)
     st.write("'Yes':1, 'No':0")
     SQL = st.selectbox("SQL", SQL)
