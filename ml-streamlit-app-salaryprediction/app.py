@@ -8,10 +8,7 @@ st.set_page_config(
      layout='wide',
      initial_sidebar_state='expanded')
 
-page = st.sidebar.selectbox("Explore Or Predict", ("Predict", "Explore"))
+# Title of the app
+st.title('🌷 Salary Prediction App')
 
-if page == "Predict":
-    show_predict_page()
-else:
-    show_predict_page()
     
