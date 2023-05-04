@@ -21,8 +21,8 @@ def show_predict_page():
     )
     
     isRightToWorkRequired = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
 
     State = (
@@ -32,60 +32,60 @@ def show_predict_page():
     )
     
     Python = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
     
     SQL = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
     
     R = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
     
     Tableau = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
     
     SAS = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
     
     Matlab = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
     
     Hadoop = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
     
     Spark = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
     
     Java = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
     
     Scala = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
     
     recruiter = (
-        "0",
-        "1",
+        '0',
+        '1',
     )
-
+    
     Jobclassification = st.selectbox("Jobclassification", Jobclassification)
     isRightToWorkRequired = st.selectbox("isRightToWorkRequired", isRightToWorkRequired)
     State = st.selectbox("State", State)
