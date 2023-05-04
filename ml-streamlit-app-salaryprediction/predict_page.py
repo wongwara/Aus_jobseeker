@@ -106,8 +106,10 @@ def show_predict_page():
     st.sidebar.subheader('Input features')
     
     st.sidebar.text_input('teaser', '')
+    st.write('if none type (-)')
     
     st.sidebar.text_input('desktopAdTemplate', '')
+    st.write('if none type (-)')
     
     ok = st.button("Calculate Salary")
     if ok:
