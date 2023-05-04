@@ -102,19 +102,10 @@ def show_predict_page():
     recruiter = st.selectbox("recruiter", recruiter)
     
     # Input widgets
-    # Store the initial value of widgets in session state
-    if "visibility" not in st.session_state:
-    st.session_state.visibility = "visible"
-    st.session_state.disabled = False
-    st.sidebar.subheader('Input features')
-    
     st.sidebar.text_input('teaser', '')
     teaser_input = st.text_input(
-        "Enter some text 👇,if none type (-)",
-        label_visibility=st.session_state.visibility,
-        disabled=st.session_state.disabled,
-        placeholder=st.session_state.placeholder,
-    )
+        "Enter teaser,if none type (-)",'')
+    
     st.sidebar.text_input('desktopAdTemplate', '')
     st.write('if none type (-)')
     
