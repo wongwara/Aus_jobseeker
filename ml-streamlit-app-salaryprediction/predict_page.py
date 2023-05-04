@@ -88,26 +88,40 @@ def show_predict_page():
     
     Jobclassification = st.selectbox("Jobclassification", Jobclassification)
     isRightToWorkRequired = st.selectbox("isRightToWorkRequired", isRightToWorkRequired)
+    st.write("f': 0, 't': 1")
     State = st.selectbox("State", State)
+    st.write("'Australian Capital Territory':0, 'South Australia':1,
+       'Western Australia':2")
     Python = st.selectbox("Python", Python)
+    st.write("'Yes':1, 'No':0")
     SQL = st.selectbox("SQL", SQL)
+    st.write("'Yes':1, 'No':0")
     R = st.selectbox("R", R)
+    st.write("'Yes':1, 'No':0")
     Tableau = st.selectbox("Tableau", Tableau)
+    st.write("'Yes':1, 'No':0")
     SAS = st.selectbox("SAS", SAS)
+    st.write("'Yes':1, 'No':0")
     Matlab = st.selectbox("Matlab", Matlab)
+    st.write("'Yes':1, 'No':0")
     Hadoop = st.selectbox("Hadoop", Hadoop)
+    st.write("'Yes':1, 'No':0")
     Spark = st.selectbox("Spark", Spark)
+    st.write("'Yes':1, 'No':0")
     Java = st.selectbox("Java", Java)
+    st.write("'Yes':1, 'No':0")
     Scala = st.selectbox("Scala", Scala)
+    st.write("'Yes':1, 'No':0")
     recruiter = st.selectbox("recruiter", recruiter)
+    st.write("'Yes':1, 'No':0")
     
     # Input widgets
-    st.sidebar.text_input('teaser', '')
     teaser_input = st.text_input(
-        "Enter teaser,if none type (-)",'')
+        "Enter teaser from your search , if None please type (-)",'')
+    desktopAdTemplate_input = st.text_input(
+        "Enter desktopAdTemplate from your search , if None please type (-)",'')
     
     st.sidebar.text_input('desktopAdTemplate', '')
-    st.write('if none type (-)')
     
     ok = st.button("Calculate Salary")
     if ok:
