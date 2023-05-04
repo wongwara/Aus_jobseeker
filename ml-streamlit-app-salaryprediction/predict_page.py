@@ -19,7 +19,7 @@ def show_predict_page():
        'Mining, Resources & Energy', 'Real Estate & Property',
        'Manufacturing, Transport & Logistics', 'Engineering',
     )
-
+    
     isRightToWorkRequired = (
         "0",
         "1",
@@ -114,6 +114,7 @@ def show_predict_page():
         ]])
         X[:, 0] = Jobclassification.transform(X[:,0])
         X[:, 1] = le_education.transform(X[:,1])
+        
         X = X.astype(float)
 
         salary = regressor.predict(X)
