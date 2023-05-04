@@ -7,6 +7,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
+import pickle
 
 def show_predict_page():
     st.title("Software Developer Salary Prediction")
@@ -164,6 +165,12 @@ def show_predict_page():
         'Teaser': [teaser],
         'DesktopAdTemplate': [desktopAdTemplate]
         })
+
+        with open('saved_steps.pkl', 'rb') as file:
+        data = pickle.load(file)
+        regressor_loaded = data["model"]
+        jobClassification = data["jobClassification"]
+        
         X['JobClassification'] = X['JobClassification'].astype(float)
         X['JobClassification'] = Jobclassification.transform(X['JobClassification'])
 
