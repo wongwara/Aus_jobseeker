@@ -122,19 +122,42 @@ def show_predict_page():
     
     st.sidebar.text_input('desktopAdTemplate', '')
     
+    import nltk
+    from nltk.corpus import stopwords
+    from nltk.tokenize import word_tokenize
+    from nltk.stem import PorterStemmer
+    from sklearn.feature_extraction.text import TfidfVectorizer
+
+    def preprocess_text_input(input_str):
+        # Clean the text data
+        input_str = input_str.replace('[^\w\s]', '') # Remove punctuation
+        input_str = input_str.replace('\d+', '') # Remove digits
+        # Normalize the text data
+        stop_words = set(stopwords.words('english'))
+        input_str = ' '.join([word.lower() for word in input_str.split() if word.lower() not in stop_words])
+        # Tokenize the text data
+        input_str = word_tokenize(input_str)
+        # Apply stemming
+        stemmer = PorterStemmer()
+        input_str = [stemmer.stem(word) for word in input_str]
+
+        # Create TF-IDF vectors
+        vectorizer = TfidfVectorizer()
+        input_tfidf = vectorizer.fit_transform([' '.join(input_str)])
+
+        return input_tfidf.toarray()
+    
     ok = st.button("Calculate Salary")
     if ok:
         X = np.array([[Jobclassification, isRightToWorkRequired, State,
         Python,SQL,R,Tableau,SAS,Matlab,Hadoop,Spark,Java,Scala,recruiter,
         teaser,desktopAdTemplate]])
         X[:, 0] = Jobclassification.transform(X[:,0])
-        X[:, 1] = le_education.transform(X[:,1])
-        X['teaser'] = le_education.transform(X[:])
-        X['desktopAdTemplate'] = le_education.transform(X[:])
-        
-        X = X.astype(float)
-
+        X['teaser'] = preprocess_text_input(teaser)
+        X['desktopAdTemplate'] = preprocess_text_input(desktopAdTemplate)
+        X = X.astype(str)
         salary = regressor.predict(X)
-        st.subheader(f"The estimated salary is ${salary[0]:.2f}")
+        st.subheader(f"The estimated range salary is ${salary[0]:.2f}")
+        st.write("'(100000.0, 110000.0] :0 ', '(90000.0, 100000.0] :1', '(110000.0, 120000.0] :2 ', '(80000.0, 90000.0] :3', '(130000.0, 140000.0] :4', '(60000.0, 80000.0] :5', '(120000.0, 130000.0] :6', '(140000.0, 160000.0] :7', '(180000.0, inf] :8', '(160000.0, 180000.0] :9', '(18000.0, 60000.0] :10' ")
         
 
