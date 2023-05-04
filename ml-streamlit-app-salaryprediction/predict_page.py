@@ -2,6 +2,7 @@
 from sklearn.preprocessing import OrdinalEncoder
 import streamlit as st
 import pandas as pd
+pip install -U nltk
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
