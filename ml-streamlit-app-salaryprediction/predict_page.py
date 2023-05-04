@@ -165,7 +165,7 @@ def show_predict_page():
         'Teaser': [teaser],
         'DesktopAdTemplate': [desktopAdTemplate]
         })
-        X[:, 0] = JobClassificatio.transform(X[:,0])
+        X[:, 0] = JobClassification.transform(X[:,0])
         X['Teaser'] = preprocess_text_input(X['Teaser'])
         X['DesktopAdTemplate'] = preprocess_text_input(X['DesktopAdTemplate'])
 
