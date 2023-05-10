@@ -16,5 +16,8 @@ Group 55 Baymax
 3. Panalee Makha  
 4. Ya-Ping Liao
 
+## Streamlit
+[Salary Prediction](https://wongwara-predictsal-ml-streamlit-app-salarypredictionapp-6smjry.streamlit.app)
+
 ## Reference
 Data Science Job Listings - Australia - 2019-2022. (2022.). Www.kaggle.com. https://www.kaggle.com/datasets/nomilk/data-science-job-listings-australia-20192020
