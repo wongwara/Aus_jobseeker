@@ -1,22 +1,20 @@
-# Job Seeker
-The Data Science Job Listings in Australia 2019-2022
-https://www.kaggle.com/datasets/nomilk/data-science-job-listings-australia-20192020
+# A Repository for Assessment task 2: End-to-end NLP project
+ 36118: Applied Natural Language Processing (ANLP), Autumn 2023
 
-As a data science student preparing to enter the job market, I was curious about programming languages and whether I needed to know a little bit of various languages/what companies anticipate from job seekers, given the dataset. The science of data Job postings -Australia in 2019-2021 will be used to answer questions that I wanted to know but didn't want to ask, such as: 
 
-• Which industries are data scientists most happy in?  
+## Job salary for data scientist in AUSTRALIA
 
-• What do data scientists make?  
+## Project objectives and scope
+This project aim to develop machine learning models with variety of algorithm and different searches that accepts a job title and the job description with any related words from the job as input and returns expected salary associated with that job. 				 
 
-• Can I work as a data scientist in Australia if I am from another country? 
+## Team Name
+Group 55 Baymax
 
-## This dataset is great for:
+## Team Member
+1. Thirada Tiamklang 
+2. Wongwara Wijara  
+3. Panalee Makha  
+4. Ya-Ping Liao
 
-Text analysis / NLP (see the Job Description column),
-Geospatial analysis (every job has a location)
-Visualisation
-Note that this dataset is very beginner-friendly, but also has some challenging wrangling to keep advanced scientists challenged and entertained.
-
-## Inspiration
-
-This dataset is inspired by a desire to know more about the world we live in.
+## Reference
+Data Science Job Listings - Australia - 2019-2022. (2022.). Www.kaggle.com. https://www.kaggle.com/datasets/nomilk/data-science-job-listings-australia-20192020
